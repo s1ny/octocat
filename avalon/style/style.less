@@ -1,0 +1,522 @@
+/*
+ *
+ * Верстка Landing'а justwhite.design@mail.ru
+ * copyright 2013 Deep Land Group Company.
+ *
+*/
+/* Подключение стилей для шрифтов */
+@import "fonts.css";
+
+/** mixins **/
+.exo(@size: 16px, @weight: 300) {
+    font:@weight @size 'Exo 2';
+}
+.b-radius(@count:5px) {
+    -webkit-border-radius: @count;
+    -moz-border-radius: @count;
+    border-radius: @count;
+}
+.font (@size:16px, @weight:400, @color:#fff) {
+    font-size:@size;
+    font-weight:@weight;
+    color:@color;
+}
+/** debug **/
+.b() {border:1px solid red;}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+header, nav, section, article, aside, footer {
+	display: block;
+}
+body {
+	font: 16px "PT Sans";
+	width: 100%;
+    font-weight:400;
+}
+a {
+	color: blue;
+	outline: none;
+	text-decoration: underline;
+}
+a:hover {
+	text-decoration: none;
+}
+img {
+	border: none;
+}
+input {
+	vertical-align: middle;
+}
+
+.section {
+    min-width:980px;
+    max-width: 1920px;
+    margin: 0 auto;
+    overflow:hidden;
+}
+.bcenter {
+    width:960px;
+    padding:0 10px;
+    margin:0 auto;
+    position:relative;
+}
+
+.form {
+    width:280px;
+    min-height:360px;
+    -webkit-box-shadow: 0px 3px 1px 0px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow:    0px 3px 1px 0px rgba(0, 0, 0, 0.3);
+    box-shadow:         0px 3px 1px 0px rgba(0, 0, 0, 0.3);
+    background: rgba(65,87,93,0.3);
+    padding:0 20px;
+    h2 {
+        .exo (30px, 100);
+        color:#fff;
+        text-align:center;
+        line-height:35px;
+        padding:30px 0 0px 0;
+    }
+    h3 {
+        font-size:18px;
+        font-weight:700;
+        text-align: center;
+        padding:10px 0;
+        color:#fff;
+    }
+    input[type=text] {
+        width:250px;
+        padding:6px 0 6px 30px;
+        border:none;
+        margin-top:10px;
+        margin-bottom:13px;
+    }
+    .name {
+        background: #fff url('../images/icon-name.png') no-repeat 7px 7px;
+    }
+    .phone {
+        background: #fff url('../images/icon-phone-small.png') no-repeat 7px 7px;
+    }    
+    input[type=submit] {
+        display:block;
+        width:243px;
+        height:68px;
+        cursor: pointer;
+        margin:0 auto;
+        border:none;
+        margin-top:12px;
+        background: url('../images/btn-send.png') no-repeat;
+    }
+}
+
+#main {
+    min-height:741px;
+    background: url('../images/main-bg.jpg') no-repeat top center;
+    .topheader {
+        float:left;
+        width:100%;
+        min-height:148px;
+        .logo {
+            float:left;
+            margin-top: 30px;
+        }
+        .contacts {
+            float:right;
+            width:360px;
+            margin-top:40px;
+            span {
+                font-size:30px;
+                color:#fff;
+                text-align:left;
+                em {
+                    position:relative;
+                    top:3px;
+                    right:5px;
+                }
+            }
+            p {
+                font-size:14px;
+                color:#fff;
+                text-align:right;
+                margin-top:5px;
+            }
+        }
+    }
+    .caption {
+        float:left;
+        width:100%;
+        min-height:202px;
+        text-align:center;
+        color:#fff;
+        h2 {
+            padding:25px 0 15px 0;
+            .exo (48px, 100);
+            line-height:55px;
+        }
+        h3 {
+            .exo (28px, 300);
+        }        
+    }
+    .mainblock {
+        float:left;
+        width:100%;
+        min-height:385px;
+        .timer {
+            float:left;
+            width:430px;
+            min-height:206px;
+            margin:60px 0 0 140px;
+            border:1px solid #fff;
+            color:#fff;
+            padding-bottom:15px;
+            .b-radius(5px);
+            h3 {
+                text-align:center;
+                padding:15px 0 10px 0;
+                .exo (30px, 100);
+            }
+            h4 {
+                text-align:center;
+            }
+            .counter {
+                float:left;
+                margin:20px 0 0 40px;
+            }
+        }
+        .midform {
+            float:right;
+            width:320px;
+            min-height:200px;
+            margin-top:15px;
+        }
+    }
+}
+
+/** features **/
+#feat {
+    min-height:181px;
+    background: #4A7778 url('../images/icons.png') no-repeat top center;
+    padding:20px 0 10px 0;
+    ul {
+        list-style:none;
+        position:relative;
+        li {
+            float:left;
+            margin-top:130px;
+            font-size:18px;
+            font-weight:700;
+            color:#fff;
+            margin-left:-10px;
+            margin-right:130px;
+            &.last {
+                margin-right:0;
+                margin-left:3px;
+            }
+        }
+        
+    }
+}
+
+/** Our partners **/
+#partner {
+    background: #def0ee;
+    padding-bottom:30px;
+    h2 {
+        .exo (36px, 300);
+        color:#213a3b;
+        padding:20px 0;
+        text-align:center;
+    }
+    img {
+        margin-right:90px;
+        &.last {
+            margin-right:0;
+        }
+    }
+}
+
+/** Service **/
+#service {
+    min-height:1541px;
+    background: url('../images/big-img.jpg') no-repeat top center;
+    .bcenter {
+        min-height:1541px;
+    }
+    h2 {
+        .exo (48px, 100);
+        text-align:center;
+        padding:30px 0 30px 0;
+        color:#fff;
+    }
+    .reg {
+        width:490px;
+        float:right;
+        text-align:left;
+        color:#fff;
+        h3 {
+            .exo (24px, 300);
+            padding:25px 0 20px 15px;
+        }
+        ul {
+            list-style:none;
+            li {
+                margin-top:8px;
+            }
+        }
+    }
+    .other {
+        width:100%;
+        float:left;
+        margin-top:60px;
+        h3 {
+            .exo (26px, 300);
+            padding:25px 0 20px 15px;
+            color:#bccece;
+            text-align:center;
+        }
+        ul {
+            list-style:none;
+            li {
+                float:left;
+                width:319px;
+                margin-left:100px;
+                margin:10px 40px 20px 100px;
+                
+                span {
+                    display:block;
+                    .font(18px, 700, #fff);
+                    padding:10px 0;
+                }
+                p {
+                    .font (14px);
+                }
+                img {
+                    wdith:319px;
+                    height:128px;
+                }
+            }
+        }
+    }
+    .mainblock {
+        float:left;
+        width:100%;
+        min-height:385px;
+        margin-top:25px;
+        .timer {
+            float:left;
+            width:430px;
+            min-height:206px;
+            margin:20px 0 0 180px;
+            border:1px solid #fff;
+            color:#fff;
+            padding-bottom:15px;
+            .b-radius(5px);
+            h3 {
+                text-align:center;
+                padding:15px 0 10px 0;
+                .exo (30px, 100);
+            }
+            h4 {
+                text-align:center;
+            }
+            .counter {
+                float:left;
+                margin:20px 0 0 40px;
+            }
+        }
+        .midform {
+            float:right;
+            width:320px;
+            min-height:200px;
+            margin-top:25px;
+            h2 {
+                font-size:30px;
+                padding:25px 0 0 0;
+            }
+        }
+        .quote {
+            position:absolute;
+            bottom:25px;
+            left:0;
+            width:605px;
+            min-height:125px;
+            padding:10px;
+            background: rgba(0,0,0,0.5);
+            p {
+                .font(13px, 400, #fff);
+                line-height:23px;
+            }
+            span {
+                display: block;
+                width:100%;
+                text-align:right;
+                .font(13px, 400, #fff);
+            }
+        }
+    }
+}
+
+
+/* 
+* Стили и классы для слайдеров и модальных окон Landing'а
+*/
+.jcarousel-container {
+	overflow: visible;
+	padding: 0;
+	margin: 0;
+}
+
+.jcarousel-direction-rtl {
+	direction: rtl;
+}
+
+.jcarousel-container-horizontal {
+    /*border: 1px solid red;*/
+}
+
+.jcarousel-clip {
+    overflow: hidden;
+}
+
+.jcarousel-clip-horizontal {
+	padding: 0;
+}
+
+.jcarousel-item {
+	margin: 0;
+	padding: 0;	
+}
+
+.jcarousel-item-horizontal {
+}
+
+.jcarousel-direction-rtl .jcarousel-item-horizontal {
+	margin-left: 10px;
+    margin-right: 0;
+}
+
+.jcarousel-item-placeholder {
+    background: #fff;
+    color: #000;
+}
+
+.jcarousel-prev-horizontal,
+.jcarousel-next-horizontal {
+    position: absolute;
+    top: 0px;
+    width: 19px;
+    height: 37px;
+    cursor: pointer;
+    background: url('../images/arrow.png') no-repeat;
+}
+
+.jcarousel-next-horizontal {
+    right: 0px;
+    background-position: 0 0px;
+}
+
+.jcarousel-prev-horizontal {
+    left: 0px;
+    background-position: 0 -20px;
+}
+
+
+.modal-wrap {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: gray;
+	background: hsla(0, 0%, 0%, .8);
+	z-index: 9999;
+	color: black;
+}
+.modal-wrap .order {
+	position: fixed;	
+	top: 25%;
+	left: 47.5%;
+	margin-left: -50px;
+	right: 0;
+}
+
+.modal-wrap .close {
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	top: 2px;
+	right: 2px;
+	font: bold 16px/16px Arial;
+	cursor: pointer;
+	text-align: center;
+	vertical-align: middle;
+	color: black;
+	padding: 0;
+}
+.modal2 {
+	position: fixed;	
+	top: 25%;
+	left: 47.5%;
+	width: 300px;
+	height: 110px;
+	background: white;
+	border: 2px solid #666;
+	padding: 30px;
+	font-size: 18px;
+	text-align: center;
+	margin-left: -150px;
+	right: 0;
+
+}
+
+#backGround {
+    display:none;
+	background-color: #000;
+	height: 100%;
+	left: 0;
+	opacity: 0.60;
+	-moz-opacity: 0.60;
+	-khtml-opacity: 0.60;
+	position: fixed; 
+	top: 0;
+	width: 100%;
+	z-index: 101;
+}
+
+
+
+.kkcountdown-box span {
+	display: block;
+	float: left;
+	text-align: center;
+}
+
+.kkc-dni, .kkc-godz, .kkc-min, .kkc-sec {
+	width: 65px;
+	height: 46px;
+    font:bold 48px 'Arial', sans-serif;
+    text-align: center;
+    color:#fff;
+    background: #000;
+    line-height:46px;
+    padding:5px 5px;  
+    border:3px solid #fff;
+    .b-radius(6px);
+    margin-right:10px;
+    
+    -webkit-box-shadow: 0px 9px 5px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow:    0px 9px 5px 0px rgba(0, 0, 0, 0.75);
+    box-shadow:         0px 9px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+.kkc-dni-text, .counter .kkc-godz-text, .counter .kkc-min-text, .counter .kkc-sec-text {
+	font:bold 14px 'Arial', sans-serif;
+    color:#fff;
+    text-transform: uppercase;
+	margin-top: 80px;
+	width: 80px;
+	margin-left: -92px;
+}

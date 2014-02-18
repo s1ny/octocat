@@ -1,0 +1,78 @@
+/*	--------------------------------------------------
+	Reveal Modals
+	-------------------------------------------------- */
+		
+	.reveal-modal-bg { 
+		position: fixed; 
+		height: 100%;
+		width: 100%;
+		background: #000;
+		background: rgba(0,0,0,.5);
+		z-index: 998;
+		display: none;
+		top: 0;
+		left: 0; 
+		}
+	
+	.reveal-modal {
+		visibility: hidden;
+		top: 200px;
+		left: 40%;
+		padding: 10px;
+		width:275px;
+        height:300px;
+		position: absolute;
+		z-index: 999;
+	}
+	
+	@media screen and (max-width:2560px) {/* Ўирина экрана не больше 2560 пиксел€ */
+        .reveal-modal {
+            left:39%;
+        }
+    }
+    
+     @media screen and (max-width:1920px) {/* Ўирина экрана не больше 1920 пиксел€ */
+        .reveal-modal {
+            left:38%;
+        }
+    }
+    
+    @media screen and (max-width:1600px) {/* Ўирина экрана не больше 1600 пиксел€ */
+        .reveal-modal {
+            left:36%;
+        }
+    }
+    
+    @media screen and (max-width:1366px) {/* Ўирина экрана не больше 1366 пиксел€ */
+        .reveal-modal {
+            left:34.6%;
+        }
+    }
+    
+    @media screen and (max-width:1280px) { /* Ўирина экрана не больше 1280 пиксел€ */
+        .reveal-modal {
+            left:33%;
+        }
+    }
+    
+    @media screen and (max-width:1100px) { /* Ўирина экрана не больше 1100 пиксел€ */
+        .reveal-modal {
+            left:31.1%;
+        }
+    }
+    @media screen and (max-width:1024px) { /* Ўирина экрана не больше 1024 пиксел€ */
+        .reveal-modal {
+            left:34.5%;
+        }
+    }
+	
+	.reveal-modal .close-reveal-modal {
+		font-size: 35px;
+		position: absolute;
+		top: 0px;
+		right: 15px;
+		color: #000;
+		font-weight: bold;
+		cursor: pointer;
+        text-decoration:none;
+	} 

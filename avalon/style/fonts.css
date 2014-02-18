@@ -1,0 +1,12 @@
+/**
+ * JustWhite copyright 2013.
+ */
+ 
+@font-face {
+	font-family: 'rubl';
+	src: url('../fonts/ALSRubl.eot');
+	src: local('O'), url('../fonts/ALSRubl.woff') format('woff'), url('../fonts/ALSRubl.ttf') format('truetype'), url('../fonts/ALSRubl.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
