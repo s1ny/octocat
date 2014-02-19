@@ -358,6 +358,262 @@ input {
     }
 }
 
+/** Why with us is profiteble **/
+#profit {
+    background: #5a7677;
+    padding-bottom:50px;
+    h2 {
+        .exo (48px, 100);
+        color:#fff;
+        text-align:center;
+        padding:10px 0 20px 0;        
+    }
+    .item {
+        width:100%;
+        float:left;
+        margin-bottom:10px;
+        .font(16px, 700, #fff);
+        
+        .from {
+            float:left;
+            width: 300px;
+            margin-left:50px;
+            position:relative;
+            &:before {
+                content:"";
+                display: block;
+                width:123px;
+                height:13px;
+                background: url('../images/arrow-right.png') no-repeat;
+                position:absolute;
+                top: 40%;
+                right:  -123px;
+            }
+        }
+        .total {
+            float:right;
+            width:410px;
+            margin-right:40px;
+            em {
+                display:block;
+                width:50px;
+                min-height:50px;
+                float:left;
+                text-align:center;
+                position:relative;
+                top:7px;
+            }
+        }
+    }
+}
+
+/** Reviews **/
+#review {
+    background: url('../images/bg.png');
+    padding-bottom:50px;
+    h2 {
+        .exo(48px, 100);
+        color:#5a7677;
+        text-align:center;
+        padding:40px 0 0px 0;
+    }
+    ul {
+        list-style:none;
+        li {
+            float:left;
+            width:470px;
+            margin-top:30px;
+            margin-bottom:30px;
+            margin-right:20px;
+            &.last {
+                margin-right:0;
+            }
+            img {
+                width:132px;
+                height: 153px;                
+            }
+            p {
+                .font(16px, 400, #2c3e50);
+                text-align:left;
+                line-height:22px;
+            }
+            em {
+                font-style:normal;
+                display:block;
+                margin-top:30px;
+            }
+            span {
+                display:block;
+                width:100%;
+                min-height:20px;
+                text-align:right;
+            }
+        }
+    }
+}
+
+/** Our team **/
+#team {
+    background: #5a7677;
+    padding-bottom:50px;
+    overflow:hidden;
+    h2 {
+        .exo (48px, 100);
+        color:#fff;
+        text-align:center;
+        padding:25px 0;
+    }
+    h3 {
+        .exo (24px, 300);
+        color:#fff;
+        text-align:center;
+        padding:0px 0 40px 0;
+    }
+    ul {
+        list-style:none;
+        li {
+            float:left;
+            width:215px;
+            margin-left:20px;
+            span {
+                display:block;
+                width:192px;
+                height:227px;
+                border:8px solid #a6d3eb;
+                -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+                -moz-box-shadow:    0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+                box-shadow:         0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+                img {
+                    max-width:100%;
+                }
+            }
+            p {
+                font-size:18px;
+                color:#fff;
+                margin-top:20px;
+            }
+        }
+    }
+}
+
+#cap {
+    background: url('../images/bg-2.png');
+    h2 {
+        .exo (48px, 100);
+        color:#5a7677;
+        padding:40px 0 20px 0;
+        text-align:center;
+    }
+}
+
+/** how Find us **/
+#map {
+    width:100%;
+    overflow:hidden;
+    position:relative;
+    .map {
+        width:960px; 
+        z-index:1;
+        margin:0 auto;
+        position:relative;
+        z-index:1;
+        .contacts {
+            position:absolute;
+            top:40px;
+            left: 60px;
+            width:270px;
+            height:315px;
+            padding:20px 20px 25px 20px;
+            background: #5a7677;
+            color:#fff;
+            .b-radius(8px);
+            &:after {
+                content:"";
+                display:block;
+                width:73px;
+                height:26px;
+                background: url('../images/map-tail.png') no-repeat;
+                position:absolute;
+                top:40%;
+                right:-73px;
+            }
+            
+            p {
+                .exo (18px, 300);
+                margin-bottom:20px;
+            }
+        }
+        .bottomForm {
+            position:absolute;
+            top:40px;
+            right:65px;
+            width:270px;
+            margin:0px 15px 0 0;
+            z-index:5;
+            .form {
+                background:#5a7677;
+                .b-radius(8px);
+            }
+        }
+    }
+}
+    
+/** bottom block **/
+#bottom {
+    background: url('../images/bg-2.png');
+    .topheader {
+        float:left;
+        width:100%;
+        min-height:148px;
+        .logo {
+            float:left;
+            width:310px;
+            margin-top: 30px;
+        }
+        .dev {
+            float:left;
+            width:240px;
+            margin-top:30px;
+            img {
+                float:left;
+                margin-right:10px;
+            }
+            a {
+                float:left;
+                .font (14px, 400, #2c3e50);
+                text-decoration:undeline;
+                margin-top:20px;
+            }
+        }
+        .contacts {
+            float:right;
+            width:360px;
+            margin-top:40px;
+            span {
+                font-size:30px;
+                color:#1c5379;
+                text-align:left;
+                em {
+                    position:relative;
+                    top:3px;
+                    right:5px;
+                }
+            }
+            p {
+                font-size:14px;
+                color:#1c5379;
+                text-align:right;
+                margin-top:5px;
+            }
+        }
+    }
+}
+    
+        
+        
+    
+    
+
 
 /* 
 * Стили и классы для слайдеров и модальных окон Landing'а

@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />	
+	<title>Авалон - юридическая компания</title>
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<link rel="stylesheet" href="style/style.css" type="text/css" media="screen, projection" />
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic&subset=latin,cyrillic-ext' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Exo+2:400,200,300,100,500,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+	
+	<link rel="stylesheet" type="text/css" href="style/reveal.css"/>
+	<link rel="stylesheet" type="text/css" href="js/fancybox/jquery.fancybox.css" media="screen" />
+    
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/kkcountdown.min.js"></script>
+    <script type="text/javascript" src="js/jquery.reveal.js"></script>
+	<script type="text/javascript" src="js/jquery.maskedinput-1.3.min.js"></script>
+	<script type="text/javascript" src="js/fancybox/jquery.fancybox.pack.js"></script>
+	<script type="text/javascript" src="js/jquery.jcarousel.min.js"></script>       
+    
+    <script type="text/javascript" src="js/main.js"></script>
+    
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+    <script type="text/javascript">
+    	function initialize() {
+    		
+    		var brooklyn = new google.maps.LatLng(55.73441, 37.627984); 
+    
+    		var stylez = [
+    			{
+    			  featureType: "all",
+    			  elementType: "all",
+    			  stylers: [
+    				{ saturation: -100 } // <-- THIS
+    			  ]
+    			}
+    		];
+    
+    		var mapOptions = {
+    			zoom: 17,
+    			center: brooklyn,
+                mapTypeControl: false,
+                scrollwheel: false,
+                navigationControl: false,
+                scaleControl: false,
+    		};
+    
+    		map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
+    
+    		var mapType = new google.maps.StyledMapType(stylez, { name:"Grayscale" });    
+    		map.mapTypes.set('tehgrayz', mapType);
+    		map.setMapTypeId('tehgrayz');
+            
+            var image = new google.maps.MarkerImage('images/map-icon.png',
+              // This marker is 20 pixels wide by 32 pixels tall.
+              new google.maps.Size(23, 26),
+              // The origin for this image is 0,0.
+              new google.maps.Point(0,0),
+              // The anchor for this image is the base of the flagpole at 0,32.
+              new google.maps.Point(0, 32));
+            
+            marker = new google.maps.Marker({
+                map:map,
+                draggable:true,
+                position: brooklyn,
+                icon: image,
+                title: "Мы находимся тут!"
+            });
+            google.maps.event.addListener(marker, 'click', toggleBounce);
+    	}
+        function toggleBounce() {
+
+          if (marker.getAnimation() != null) {
+            marker.setAnimation(null);
+          } else {            
+            marker.setAnimation(google.maps.Animation.BOUNCE);
+            delay(4).marker.setAnimation(null);            
+          }
+        }
+    </script>
+</head>
+
+<body onload="initialize()">
+    
+    <div id="main" class="section">
+    	<div class="bcenter">
+    		<div class="topheader">
+                <div class="logo"><img src="images/logo.png" /></div>
+                <div class="contacts">
+                    <span><em><img src="images/icon-phone.png" /></em> 8 (383) 299-29-56</span>
+                    <p>г. Новосибирск, Красный проспект, дом 1, офис 210</p>
+                </div>
+            </div>
+            <div class="caption">
+                <h2>Открытие и закрытие ООО/ИП<br />по низким ценам</h2>
+                <h3>Быстро и без поездок в налоговую</h3>
+            </div>
+            
+            <div class="mainblock">
+                <div class="timer">
+                    <h3>Успейте до конца недели!</h3>
+                    <h4>Получите скидку от 30% до 50%</h4>
+                    <div class="counter" time="1376966800"></div>
+                </div>
+                <div class="midform">
+                    <div class="form">
+                        <h2>Отправьте заявку<br />сейчас</h2>
+                        <h3>и получите скидку от 30% до 50%</h3>
+                        <form class="order" method="post" action="mail.php">
+                            <input type="text" class="name" name="name" placeholder="Введите ваше имя" />
+                            <input type="text" class="phone" name="phone" placeholder="Введите телефон" />
+                            <input type="submit" name="buttom" value="" />
+                        </form>
+                    </div>
+                </div>
+            </div>
+    	</div><!-- .bcenter -->
+    </div><!-- #main -->
+    
+    <div id="feat" class="section">
+    	<div class="bcenter">
+    		<ul>
+                <li>Обслужено более 3000 клиентов</li>
+                <li>9 лет опыта работы</li>
+                <li class="last">Результат через несколько дней</li>
+            </ul>
+    	</div><!-- .bcenter -->
+    </div><!-- #feat -->
+    
+    <div id="partner" class="section">
+    	<div class="bcenter">
+    		<h2>Нам доверяют</h2>
+            <img src="images/partner/1.jpg" title="Partner title" />
+            <img src="images/partner/2.jpg" title="Partner title" />
+            <img src="images/partner/3.jpg" title="Partner title" />
+            <img src="images/partner/4.jpg" class="last" title="Partner title" />
+    	</div><!-- .bcenter -->
+    </div><!-- #partner -->
+    
+    <div id="service" class="section">
+    	<div class="bcenter">
+    		<h2>Наши услуги</h2>
+            <div class="reg">
+                <h3>Регистрация ООО и ИП</h3>
+                <ul>
+                    <li>— Помогаем сделать выбор: "ООО или ИП?"</li>
+                    <li>— Подготавливаем все необходимые документы</li>
+                    <li>— Самостоятельно съездим в налоговую и другие гос.организации</li>
+                    <li>— Проконсультируем по интересующим вопросам</li>
+                    <li>— Зарегистрируем для вас юридический адрес</li>
+                </ul>
+            </div>
+            <div class="other">
+                <h3>Другие услуги</h3>
+                <ul>
+                    <li>
+                        <img src="images/other/1.jpg" title="Caption Image" />
+                        <span>Ликвидация ООО и ИП</span>
+                        <p>Помогаем сделать выбор: "ООО или ИП?"<br />Подготавливаем все необходимые документы<br />Самостоятельно съездим в налоговую и другие гос.организации<br />Проконсультируем по интересующим вопросам<br />Зарегистрируем для вас юридический адрес</p>
+                    </li>
+                    <li>
+                        <img src="images/other/2.jpg" title="Caption Image" />
+                        <span>Внесение изменений в ЕГРЮЛ</span>
+                        <p>Помогаем сделать выбор: "ООО или ИП?"<br />Подготавливаем все необходимые документы<br />Самостоятельно съездим в налоговую и другие гос.организации<br />Проконсультируем по интересующим вопросам<br />Зарегистрируем для вас юридический адрес</p>
+                    </li>
+                    <li>
+                        <img src="images/other/3.jpg" title="Caption Image" />
+                        <span>Выписка из ЕГРЮЛ</span>
+                        <p>Помогаем сделать выбор: "ООО или ИП?"<br />Подготавливаем все необходимые документы<br />Самостоятельно съездим в налоговую и другие гос.организации<br />Проконсультируем по интересующим вопросам<br />Зарегистрируем для вас юридический адрес</p>
+                    </li>
+                    <li>
+                        <img src="images/other/4.jpg" title="Caption Image" />
+                        <span>Получение допуска СРО</span>
+                        <p>Помогаем сделать выбор: "ООО или ИП?"<br />Подготавливаем все необходимые документы<br />Самостоятельно съездим в налоговую и другие гос.организации<br />Проконсультируем по интересующим вопросам<br />Зарегистрируем для вас юридический адрес</p>
+                    </li>
+                </ul>
+            </div>            
+            <div class="mainblock">
+                <div class="timer">
+                    <h3>Успейте до конца недели!</h3>
+                    <h4>Получите скидку от 30% до 50%</h4>
+                    <div class="counter" time="1376966800"></div>
+                </div>
+                <div class="midform">
+                    <div class="form">
+                        <h2>Отправьте заявку<br />сейчас</h2>
+                        <h3>и получите скидку от 30% до 50%</h3>
+                        <form class="order" method="post" action="mail.php">
+                            <input type="text" class="name" name="name" placeholder="Введите ваше имя" />
+                            <input type="text" class="phone" name="phone" placeholder="Введите телефон" />
+                            <input type="submit" name="buttom" value="" />
+                        </form>
+                    </div>
+                </div>
+                
+                <div class="quote">
+                    <p>Обращалась в данную компанию по совету друзей, которые раньше уже имели дело с данной фирмой. Обратилась в подобные организации впервые, поэтому не знаю всех тонкостей бизнеса и как сравнивать с другими компаниями. Зарегистрировали ООО, в обещанные сроки и все разъяснили по налогам и ведению бух.учета, так что мне все стало ясно. </p>
+                    <span>Спасибо, Буду советовать друзьям)</span>
+                    <span><strong>Чернышова И.С</strong></span>
+                </div>
+            </div>
+    	</div><!-- .bcenter -->
+    </div><!-- #service -->
+    
+    <div id="profit" class="section">
+    	<div class="bcenter">
+    		<h2>Почему с нами выгодно?</h2>
+            <div class="item">
+                <div class="from">Думаете открыть самостоятельно или обратиться в компанию?</div>
+                <div class="total"><em><img src="images/profit-icon-1.png" /></em>С нами Вы сбережете деньги, не переплачивая лишние пошлины, и не допуская ошибок.</div>
+            </div>
+            <div class="item">
+                <div class="from">Сомневаетесь выбрать ООО или ИП?</div>
+                <div class="total"><em><img src="images/profit-icon-2.png" /></em>Проанализируем ваши потребности и подберем оптимальную форму организации.</div>
+            </div>
+            <div class="item">
+                <div class="from">Цените свое время и хотите открыться<br />как можно скорее?</div>
+                <div class="total"><em><img src="images/profit-icon-3.png" /></em>Услуги оказываем  быстро и в срок. Вам не нужно будет стоять в многочасовых очередях.</div>
+            </div>
+            <div class="item">
+                <div class="from">У вас нет юридического адреса,<br />а офис вам не нужен? </div>
+                <div class="total"><em><img src="images/profit-icon-4.png" /></em>Предоставим юридический адрес<br />с оформлением всех бумаг.</div>
+            </div>
+            <div class="item">
+                <div class="from">Нужна юридическая поддержка<br />после открытия?</div>
+                <div class="total"><em><img src="images/profit-icon-5.png" /></em>Мы консультируем наших клиентов<br />абсолютно бесплатно!</div>
+            </div>
+            <div class="item">
+                <div class="from">Ищите компанию, где открыть<br />качественно и недорого?</div>
+                <div class="total"><em><img src="images/profit-icon-6.png" /></em>Вы ее нашли. Профессионализм и низкие цены обеспечены. 9 лет более 3000 клиентов доверяют нам.</div>
+            </div>
+    	</div><!-- .bcenter -->
+    </div><!-- #profit -->
+    
+    <div id="review" class="section">
+    	<div class="bcenter">
+    		<h2>Отзывы клиентов</h2>
+            <ul>
+                <li>
+                    <img src="images/review/1.jpg" title="Reviewer caption" />
+                    <p>Готов оставить положительный отзыв, т.к. действительно есть за что. Уже на консультации я понял, что данная компания серьезная и ответственно подходит к делу. А то, как они оказывают услуги говорить долго и не нужно. </p>
+                    <em style="margin-top: 73px;"><span>Рекомендую</span>
+                    <span><strong>Антонов Дмитрий</strong></span></em>
+                </li>
+                <li  class="last">
+                    <img src="images/review/2.jpg" title="Reviewer caption" />
+                    <p>Обращалась в данную компанию по совету друзей, которые раньше уже имели дело с данной фирмой.<br />Обратилась в подобные организации впервые, поэтому не знаю всех тонкостей бизнеса и как сравнивать с другими компаниями. Зарегистрировали ООО, в обещанные сроки и все разъяснили по налогам и ведению бух.учета, так что мне все стало ясно.</p>
+                    <em><span>Спасибо, Буду советовать друзьям)</span>
+                    <span><strong>Чернышова Ирина</strong></span></em>
+                </li>
+                <li>
+                    <img src="images/review/3.jpg" title="Reviewer caption" />
+                    <p>Мы регистрировали ООО, подготовили документы за час, и вся процедура длилась чуть больше недели как и было обещано по телефону. По стоимости: общую цену сообщили по телефону и она совпала по факту.</p>
+                    <em><span>Спасибо</span>
+                    <span><strong>Белова Александра</strong></span></em>
+                </li>
+                <li class="last">
+                    <img src="images/review/4.jpg" title="Reviewer caption" />
+                    <p>Всегда консультируюсь в этой компании,  никаких нареканий не было. Очень нравится сайт, удобный, нет лишней информации и все цены реальны. Припарковаться у офиса можно без проблем, хотя находится  в центре . Одним словом все для клиентов)</p>
+                    <em><span></span>
+                    <span><strong>Фирсов Эдуард</strong></span></em>
+                </li>
+            </ul>
+    	</div><!-- .bcenter -->
+    </div><!-- #review -->
+    
+    <div id="team" class="section">
+    	<div class="bcenter">
+            <h2>Наша команда</h2>
+            <h3>поможет и проконсультирует Вас по интересующим вопросам</h3>
+    		<ul>
+                <li>
+                    <span><img src="images/team/1.jpg" class="Co-worker caption" /></span>
+                    <p><strong>Елена Александровна</strong><br /><em>генеральный директор</em></p>
+                </li>
+                <li>
+                    <span><img src="images/team/2.jpg" class="Co-worker caption" /></span>
+                    <p><strong>Елена Сергеевна</strong><br /><em>главный бухгалтер</em></p>
+                </li>
+                <li>
+                    <span><img src="images/team/3.jpg" class="Co-worker caption" /></span>
+                    <p><strong>Ольга Юрьевна</strong><br /><em>бухгалтер</em></p>
+                </li>
+                <li>
+                    <span><img src="images/team/4.jpg" class="Co-worker caption" /></span>
+                    <p><strong>Ирина Иванова</strong><br /><em>юрист</em></p>
+                </li>
+            </ul>
+    	</div><!-- .bcenter -->
+    </div><!-- #team -->
+    
+    <div id="cap" class="section">
+    	<div class="bcenter">
+    		<h2>Как нас найти?</h2>
+    	</div><!-- .bcenter -->
+    </div><!-- #cap -->
+    
+    <div id="map">    
+    	<div class="map">
+            <div style="width:1920px; position:relative; left:-480px; min-height:445px;">
+                <div id="map_canvas" style="height:445px"></div>
+            </div>
+                    
+            
+            <div class="contacts">
+                <p>г. Москва, ул. Пятницкая 53/18,<br />корп. 1., 1 подъезд, кв. 4</p>                
+                <p>Если пешком, то доступно<br />от м. Новокузнецкая,<br />м. Добрынинская, м. Павелецкая</p>                
+                <p>Режим работы: круглосуточно</p>
+                <p>Ориентиры: в нашем доме<br />ресторан «Тануки» и ТД «Эста»</p>
+            </div>
+            
+            <div class="bottomForm">
+                <div class="form">
+                    <h2>Отправьте заявку<br />сейчас</h2>
+                    <h3>и получите скидку от 30% до 50%</h3>
+                    <form class="order" method="post" action="mail.php">
+                        <input type="text" class="name" name="name" placeholder="Введите ваше имя" />
+                        <input type="text" class="phone" name="phone" placeholder="Введите телефон" />
+                        <input type="submit" name="buttom" value="" />
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div><!-- #map -->
+    
+    <div id="bottom" class="section">
+    	<div class="bcenter">
+    		<div class="topheader">
+                <div class="logo"><img src="images/bot-logo.png" /></div>
+                <div class="dev">
+                    <i><img src="images/magnit-logo.png" title="Developers" /></i>
+                    <a href="#0" title="Разработано в Магнит">Создано<br />в «Магните продаж»</a>
+                </div>
+                <div class="contacts">
+                    <span><em><img src="images/bot-phone-icon.png" /></em> 8 (383) 299-29-56</span>
+                    <p>г. Новосибирск, Красный проспект, дом 1, офис 210</p>
+                </div>
+            </div>
+    	</div><!-- .bcenter -->
+    </div><!-- #bottom -->
+
+    <!-- Всплывающее окно формы -->
+    <div  id="callForm" class="reveal-modal">
+        <div class="form">
+            <h2>Отправьте заявку<br />сейчас</h2>
+            <h3>и получите скидку от 30% до 50%</h3>
+            <form class="order" method="post" action="mail.php">
+                <input type="text" name="name" placeholder="Введите ваше имя" />
+                <input type="text" name="phone" placeholder="Введите телефон" />
+                <input type="submit" name="buttom" value="" />
+            </form>
+        </div>
+        <a class="close-reveal-modal">&#215;</a>
+    </div>    
+    
+    <div class="modal-wrap modal2">
+		<div class="message content">
+			<p></p>
+			<div class="close">x</div>
+		</div>
+	</div>
+    <div id="backGround"></div>
+
+
+</body>
+</html>
