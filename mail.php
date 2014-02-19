@@ -5,7 +5,7 @@ include ('config.php');
 
 $name=trim($_POST['name']);
 $phone=trim($_POST['phone']);
-$question = (!empty($_POST['questions'])) ? $_POST['questions'] : "";
+$question = (!empty($_POST['mail'])) ? $_POST['mail'] : "";
 
 if (!isset($_POST['name']) or empty($_POST['name'])) {
     $error1 = "Введите Имя.<br />";
@@ -24,7 +24,7 @@ if (empty($error1) and empty($error2)) {
     $name    = htmlspecialchars($name);
     $phone   = htmlspecialchars($phone);
     
-    $questions = (!empty($question)) ? "Question:" . $question . "<br/>" : "";
+    $questions = (!empty($question)) ? "E-mail:" . $question . "<br/>" : "";
 
     $date = date("H:i:s m.d.y");
     $message = "
